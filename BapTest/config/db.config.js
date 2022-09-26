@@ -1,8 +1,9 @@
+// You can use this: free plan
 module.exports = {
     HOST: "blqi6g6ep91v5gilv2pt-mysql.services.clever-cloud.com",
     USER: "uc9y94r3gmtzmvnx",
     PASSWORD: "ipUVsr9sPVSoyLB6gPqj",
-    DB: "blqi6g6ep91v5gilv2pt",
+    DB: "blqi6g6ep91v5gilv2pt",         
     dialect: "mysql",
     pool: {
         max: 5,
