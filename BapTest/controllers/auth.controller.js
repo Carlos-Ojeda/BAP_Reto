@@ -31,6 +31,6 @@ module.exports.signin = (req, res) => {
             accessToken: token
         });
     }).catch(err => {
-        res.status(405).send({message: "error"});
+        res.status(500).send({message: "error"});
     });
 };

@@ -11,7 +11,7 @@ module.exports.getTasks = (req,res) =>{
         if (!taskList) {
             return res.status(404).send({message: "Task not found"});
         }
-        res.send({
+        res.status(200).send({
             taskList
         })
     }).catch(err => {
@@ -31,7 +31,7 @@ module.exports.createTask = (req,res) =>{
         if(!task){
             res.status(503).send("Try Later");
         }else{
-            res.send({message: "Created"});
+            res.status(200).send({message: "Created"});
         }
     }).catch(err => {
         res.status(500).send("Error");
@@ -63,7 +63,7 @@ module.exports.editTask = (req,res) =>{
             if(!task2){
                 res.status(503).send("Try Later");
             }else{
-                res.send({message: "Edited"});
+                res.status(200).send({message: "Edited"});
             }
         })
     }).catch(err => {
@@ -72,7 +72,6 @@ module.exports.editTask = (req,res) =>{
 }
 
 module.exports.deleteTask = (req,res) =>{
-
     Task.findOne({
         where: {
             id: req.body.task_id,
@@ -89,7 +88,7 @@ module.exports.deleteTask = (req,res) =>{
             }
         }).then(task => {
             if(task){
-                res.send({message: "Deleted"});
+                res.status(200).send({message: "Deleted"});
             }else{
                 res.status(503).send("Try Later");
             }
@@ -97,10 +96,6 @@ module.exports.deleteTask = (req,res) =>{
     }).catch(err => {
         res.status(500).send("Error");
     });
-
-
-
-    
 }
 
 module.exports.getTask = (req,res) =>{
@@ -113,7 +108,7 @@ module.exports.getTask = (req,res) =>{
         if (!task) {
             return res.status(404).send({message: "Task not found"});
         }
-        res.send({
+        res.status(200).send({
             task
         })
     }).catch(err => {

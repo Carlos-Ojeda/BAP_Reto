@@ -12,5 +12,5 @@ module.exports = swaggerOptions = {
         },
         version: "1.0.0"
     },
-    apis: ['.routes/*.js']
+    apis: ["./controllers/*.js","./routes/*.js"]
 };
